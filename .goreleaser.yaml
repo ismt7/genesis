@@ -16,7 +16,7 @@ builds:
       - arm64
     ldflags:
       - -s -w
-      - -X github.com/ismt7/genesis/cmd.version={{.Version}}
+      - -X github.com/ismt7/genesis/cmd.version={{.RawVersion}}
       - -X github.com/ismt7/genesis/cmd.commit={{.Commit}}
       - -X github.com/ismt7/genesis/cmd.date={{.Date}}
 
