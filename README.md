@@ -35,6 +35,29 @@ go build -o genesis .
 mv genesis /usr/local/bin/
 ```
 
+## アップデート
+
+### `go install` でインストールした場合
+
+最新バージョンに更新するには、インストール時と同じコマンドを再実行してください。
+
+```bash
+go install github.com/ismt7/genesis@latest
+```
+
+> **注意:** `go install` ではビルド時の `-ldflags` が渡されないため、`genesis version` を実行すると `genesis vdev (commit: none, built: unknown)` と表示されます。正確なバージョン情報が必要な場合は、[GitHubリリースページ](https://github.com/ismt7/genesis/releases)から該当バージョンのバイナリを直接ダウンロードしてください。
+
+### ソースからビルドした場合
+
+リポジトリを最新の状態に更新してからビルドしてください。
+
+```bash
+cd genesis
+git pull origin main
+go build -o genesis .
+mv genesis /usr/local/bin/
+```
+
 ## 使い方
 
 ```bash
