@@ -66,6 +66,15 @@ genesis --help
 
 # バージョンを確認
 genesis version
+
+# Next.js アプリを作成
+genesis nextapp my-app
+
+# MCP サーバーの初期プロジェクトを作成
+genesis mcpserver my-mcp-server
+
+# AGENTS.md を作成
+genesis agents
 ```
 
 ## 動作確認
@@ -78,6 +87,9 @@ go run . --help
 
 # バージョンを確認
 go run . version
+
+# MCP サーバーの初期プロジェクトを作成
+go run . mcpserver my-mcp-server
 ```
 
 ビルド後に確認する場合は以下の通りです。

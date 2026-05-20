@@ -1,10 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-	"os"
-	"os/exec"
-
 	"github.com/spf13/cobra"
 )
 
@@ -19,15 +15,7 @@ var nextappCmd = &cobra.Command{
 			npxArgs = append(npxArgs, args[0])
 		}
 
-		c := exec.Command("npx", npxArgs...)
-		c.Stdin = os.Stdin
-		c.Stdout = os.Stdout
-		c.Stderr = os.Stderr
-
-		if err := c.Run(); err != nil {
-			return fmt.Errorf("failed to run create-next-app: %w", err)
-		}
-		return nil
+		return runAttachedCommand("npx", npxArgs, "create-next-app")
 	},
 }
 
